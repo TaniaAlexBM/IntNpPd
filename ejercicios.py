@@ -6,7 +6,7 @@ data = pd.read_csv('users.csv', index_col = 'id')
 # Mostrar en consola el nombre de todos los usuarios que no poseen un correo electrónico
 data[data['email'].isnull()]['nombre']
 # Listar el nombre y el correo del usuario más joven de Canadá
-data[data['edad'] == data['edad'].min()][['nombre','email']]
+data[(data['pais'] == 'Canada') & (data['edad'] == data['edad'].min())][['nombre','email']]
 # Listar el nombre y el correo de los usuarios más jóvenes de Germany y Canadá
 data.iloc[data[data['pais'].isin(['Germany','Canada'])]['edad'].sort_values().head(2).index.values]
 # Listar los cinco países con menos cantidad de usuarios
