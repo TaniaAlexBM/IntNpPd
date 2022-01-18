@@ -20,6 +20,6 @@ data[data['pais'].isin(['Canada','Germany'])]['pais'].count()
 # Mostrar en consola la cantidad de países en el dataset
 data.groupby('pais')['pais'].count().size
 # Obtener el promedio de edad de cada uno de los países
-data.groupby('pais').mean('edad')
+data.groupby('pais').mean('edad')['edad']
 # Mostrar en consola el país con más hombres
 data[data['genero'] == 'male'].groupby('pais')['pais'].count().sort_values(ascending = False).head(1)
